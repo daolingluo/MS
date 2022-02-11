@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+    <!--标题栏样式-->
+    <Style  TargetType="DataGridColumnHeader" >
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="BorderBrush" Value="#c0c0c0" />
+    </Style>
+    
+    <Style TargetType="DataGridCell">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="DataGridCell">
+                    <TextBlock TextAlignment="Center" VerticalAlignment="Center"  >
+                           <ContentPresenter />
+                    </TextBlock>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style  TargetType="{x:Type DataGridRow}">
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Foreground" Value="Red"/>
+                <Setter Property="Background" Value="#FFE8E8E8" />
+            </Trigger>            
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
